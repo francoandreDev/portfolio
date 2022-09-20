@@ -2,13 +2,16 @@
     --font: "Open Sans", sans-serif;
     --bg-color-main: rgb(29, 38, 47);
     --bg-color-side: rgb(32, 41, 50);
+    --bg-color-contrast: rgb(18,26,35);
     --text-color-main: rgb(255, 255, 255);
+    --text-color-contrast: rgb(191,194,196);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: solid 1px rgb(3, 159, 76);
 }
 
 .bg {
