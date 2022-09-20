@@ -11,7 +11,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: solid 1px rgb(3, 159, 76);
+    box-shadow: 0px 0px 0px 2px rgb(49, 173, 107) inset;
+    -webkit-box-shadow: 0px 0px 0px 2px rgb(49, 173, 107) inset;
+    -moz-box-shadow: 0px 0px 0px 2px rgb(49, 173, 107) inset;
 }
 
 .bg {
@@ -19,6 +21,28 @@
     color: var(--text-color-main);
     font-family: var(--font);
     text-align: center;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-bg {
+    background-color: var(--bg-color-side);
+    font-weight: bolder;
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid var(--bg-color-contrast);
+}
+
+.format-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-bg {
+    width: 70%;
+    height: 100%;
+    border-left: 1px solid var(--bg-color-contrast);
 }
