@@ -1,9 +1,13 @@
 import React, {useReducer} from 'react';
+import {useDispatch} from "react-redux";
+import { changeTheme } from '../../store/slices/theme.slice';
 
 const Themes = () => {
 
+    const dispatchRedux = useDispatch()
+
     const initialState = {
-        icon: <i class="fa-regular fa-sun"></i>,
+        icon: <i className="fa-regular fa-sun"></i>,
         theme: "theme-dark",
         isDark: true
     };
@@ -13,12 +17,12 @@ const Themes = () => {
             case "changeTheme":
                 return state.isDark
                     ? {
-                          icon: <i class="fa-regular fa-moon"></i>,
+                          icon: <i className="fa-regular fa-moon"></i>,
                           theme: "theme-light",
                           isDark: false
                       }
                     : {
-                          icon: <i class="fa-regular fa-sun"></i>,
+                          icon: <i className="fa-regular fa-sun"></i>,
                           theme: "theme-dark",
                           isDark: true
                       };
@@ -27,11 +31,11 @@ const Themes = () => {
         }
     }
 
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatchReducer] = useReducer(reducer, initialState);
 
     return (
-        <div className={`bg-home ${state.isDark ? "theme-dark" : "theme-light"}`}>
-        <button onClick={() => dispatch({ type: "changeTheme" }) } >
+        <div className={`${state.isDark ? "theme-dark" : "theme-light"}`}>
+        <button onClick={() => {dispatchReducer({ type: "changeTheme" }); dispatchRedux(changeTheme()) }} >
             Turn into: {state.icon}
         </button>
     </div>

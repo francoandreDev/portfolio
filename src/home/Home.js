@@ -1,12 +1,15 @@
 import React from "react";
+import NavBar from "./header/NavBar";
+import Main from "./main/Main";
+import Footer from "./footer/Footer";
 import "./Home.css";
-import NavBar from "./NavBar";
 
 const Home = () => {
-
     return (
-        <div>
-            <NavBar/>
+        <div className="bg-home">
+            <NavBar />
+            <Main />
+            <Footer />
         </div>
     );
 };

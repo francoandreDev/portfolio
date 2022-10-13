@@ -3,9 +3,9 @@ import Themes from "./Themes";
 
 const NavBar = () => {
     return (
-        <div>
+        <header>
             <Themes />
-        </div>
+        </header>
     );
 };
 
