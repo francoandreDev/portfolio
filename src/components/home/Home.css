@@ -1,0 +1,57 @@
+:root {
+    --bg-light-color: #dbdbdb;
+    --bg-dark-color: #2e2e2e;
+    --light-color: #d7d7d7;
+    --dark-color: #272727;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, span,
+code, section, div, article,
+a, ul, li, ol, button, form, input,
+i, img, link, label, nav, main,
+option, progress {
+    background-color: inherit;
+    border: inherit;
+    color: inherit;
+}
+
+.bg-home {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.theme-light {
+    animation: toDay 1s ease forwards;
+    -webkit-animation: toDay 1s ease forwards;
+}
+
+.theme-dark {
+    animation: toNight 1s ease forwards;
+    -webkit-animation: toNight 1s ease forwards;
+}
+
+@keyframes toDay {
+    to {
+        background-color: var(--bg-light-color);
+        color: var(--dark-color);
+    }
+}
+
+@keyframes toNight {
+    to {
+        background-color: var(--bg-dark-color);
+        color: var(--light-color);
+    }
+}
