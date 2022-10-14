@@ -18,25 +18,56 @@ li {
     list-style: none;
     cursor: pointer;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-li::before {
+li::after {
     content: "";
-    position: absolute;
-    top: 22px;
+    position: relative;
+    top: 0;
     left: 0;
-    width: 0;
     height: 0;
-    border-bottom: 1px solid gray;
+    border: 1px solid;
+    opacity: 0;
 }
 
-li:hover::before {
-    animation: underline 1s linear forwards;
-    -webkit-animation: underline 1s linear forwards;
+li:hover::after {
+    animation: underline 0.5s ease-in-out forwards;
+    -webkit-animation: underline 0.5s ease-in-out forwards;
+}
+
+li:not(:hover)::after {
+    animation: no-underline 0.5s ease-in-out forwards;
+    -webkit-animation: no-underline 0.5s ease-in-out forwards;
 }
 
 @keyframes underline {
-    to {
+    0%{
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
         width: 100%;
+    }
+}
+
+@keyframes no-underline {
+    0% {
+        opacity: 1;
+        width: 100%;
+    }
+    99%{
+        opacity: 1;
+        width: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }

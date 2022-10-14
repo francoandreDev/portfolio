@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Themes from "./Themes";
-import settings from "../../assets/images/setting.png";
 import "./Config.css";
 
 const Config = () => {
@@ -11,7 +10,7 @@ const Config = () => {
                 className="config"
                 onClick={() => setOpen((currentOpen) => !currentOpen)}
             >
-                <img src={settings} alt="Config" />
+                <i className="fa-solid fa-gear"></i>
             </div>
             <section
                 className="config-section"

@@ -3,6 +3,8 @@
     --bg-dark-color: #2e2e2e;
     --light-color: #d7d7d7;
     --dark-color: #272727;
+    --link-light-color: #248eff;
+    --link-dark-color: #0117b8;
 }
 
 * {
@@ -11,11 +13,33 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, span,
-code, section, div, article,
-a, ul, li, ol, button, form, input,
-i, img, link, label, nav, main,
-option, progress {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+code,
+section,
+div,
+article,
+a,
+ul,
+li,
+ol,
+button,
+form,
+input,
+i,
+img,
+link,
+label,
+nav,
+main,
+option,
+progress {
     background-color: inherit;
     border: inherit;
     color: inherit;
@@ -24,12 +48,12 @@ option, progress {
 .bg-home {
     width: 100vw;
     min-height: 100vh;
-    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .theme-light {
@@ -37,9 +61,21 @@ option, progress {
     -webkit-animation: toDay 1s ease forwards;
 }
 
+.theme-light a:active,
+.theme-light a::selection {
+    background-color: inherit;
+    color: var(--link-dark-color);
+}
+
 .theme-dark {
     animation: toNight 1s ease forwards;
     -webkit-animation: toNight 1s ease forwards;
+}
+
+.theme-dark a:active,
+.theme-dark a::selection {
+    background-color: inherit;
+    color: var(--link-light-color);
 }
 
 @keyframes toDay {
@@ -53,5 +89,59 @@ option, progress {
     to {
         background-color: var(--bg-dark-color);
         color: var(--light-color);
+    }
+}
+
+.wave {
+    position: relative;
+    width: 0;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 5px double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    filter: invert(5%) opacity(0.8);
+    -webkit-filter: invert(5%) opacity(0.8);
+}
+
+.wave#wave-1 {
+    position: absolute;
+    width: 15vw;
+    border: none;
+}
+
+@keyframes waves-growing-1 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    5% {
+        width: 2vw;
+        opacity: 1;
+    }
+    100% {
+        width: 15vw;
+        opacity: 1;
+    }
+}
+
+@keyframes waves-growing-2 {
+    55% {
+        width: 0;
+        opacity: 0;
+    }
+    60% {
+        width: 2vw;
+        opacity: 1;
+    }
+    100% {
+        width: 10vw;
+        opacity: 1;
     }
 }
