@@ -8,7 +8,7 @@ header {
     font-size: medium;
     width: 100%;
     font-family: var(--font-header);
-    border-bottom: 1px double black;
+    border-bottom: 1px double dimgray;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
