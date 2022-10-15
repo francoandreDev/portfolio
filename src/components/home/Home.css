@@ -1,16 +1,29 @@
 :root {
+    /*----------------------------Colors--------------------------------*/
     --bg-light-color: #dbdbdb;
     --bg-dark-color: #2e2e2e;
     --light-color: #d7d7d7;
     --dark-color: #272727;
+    --steel-color: dimgray;
     --link-light-color: #248eff;
-    --link-dark-color: #0117b8;
+    --link-dark-color: #142ffcc8;
+    --dark-color-main-selection: #36df27;
+    --light-color-main-selection: #0fff93;
+    --color-footer: #ff0644;
+    /*----------------------------Colors--------------------------------*/
+    /*-----------------------------Fonts--------------------------------*/
+    --font-main: "Source Sans Pro", sans-serif;
+    --font-config: "Ubuntu", sans-serif;
+    --font-header: 'Roboto Condensed', sans-serif;
+    --font-footer: 'Alkalami', serif;
+    /*-----------------------------Fonts--------------------------------*/
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 h1,
@@ -43,6 +56,7 @@ progress {
     background-color: inherit;
     border: inherit;
     color: inherit;
+    font-family: inherit;
 }
 
 .bg-home {
@@ -50,7 +64,7 @@ progress {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -64,7 +78,7 @@ progress {
 .theme-light a:active,
 .theme-light a::selection {
     background-color: inherit;
-    color: var(--link-dark-color);
+    text-shadow: 0 0 black;
 }
 
 .theme-dark {
@@ -75,7 +89,7 @@ progress {
 .theme-dark a:active,
 .theme-dark a::selection {
     background-color: inherit;
-    color: var(--link-light-color);
+    color: rgba(12, 186, 255, 0.806);
 }
 
 @keyframes toDay {
@@ -94,6 +108,7 @@ progress {
 
 .wave {
     position: relative;
+    z-index: 1;
     width: 0;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -106,14 +121,22 @@ progress {
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    filter: invert(5%) opacity(0.8);
-    -webkit-filter: invert(5%) opacity(0.8);
+    color: skyblue;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 .wave#wave-1 {
     position: absolute;
     width: 15vw;
-    border: none;
+    background-blend-mode: multiply;
+    opacity: 0.5;
+    background-image: url("../../assets/images/water-image.jpg");
+}
+
+@keyframes waves-growing {
+    to {
+    }
 }
 
 @keyframes waves-growing-1 {

@@ -1,12 +1,26 @@
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
     letter-spacing: 1px;
     word-spacing: 1px;
     font-size: medium;
     width: 100%;
+    font-family: var(--font-header);
+    border-bottom: 1px double black;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+header > ul,
+header > ul > li {
+    border-bottom: none;
+    background-color: transparent;
 }
 
 ul {
     width: 100%;
+    min-height: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -22,6 +36,16 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 4vh;
+    font-weight: 700;
+}
+
+.theme-dark li {
+    color: var(--light-color);
+}
+
+.theme-light li {
+    color: var(--dark-color);
 }
 
 li::after {
@@ -45,7 +69,7 @@ li:not(:hover)::after {
 }
 
 @keyframes underline {
-    0%{
+    0% {
         opacity: 0;
     }
     1% {
@@ -63,7 +87,7 @@ li:not(:hover)::after {
         opacity: 1;
         width: 100%;
     }
-    99%{
+    99% {
         opacity: 1;
         width: 0;
     }

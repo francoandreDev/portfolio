@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import { useDispatch } from "react-redux";
 import { changeTheme } from "../../store/slices/theme.slice";
+import "./Themes.css";
 
 const Themes = () => {
     const dispatchRedux = useDispatch();
@@ -41,7 +42,7 @@ const Themes = () => {
     const [state, dispatchReducer] = useReducer(reducer, initialState);
 
     return (
-        <div className={`${state.isDark ? "theme-dark" : "theme-light"}`}>
+        <div className={`${state.isDark ? "theme-dark" : "theme-light"} themes`}>
             <button
                 onClick={() => {
                     dispatchReducer({ type: "changeTheme" });

@@ -1,0 +1,21 @@
+.themes {
+    position: fixed;
+    z-index: 1;
+    bottom: 16vh;
+    right: 11vw;
+    background-color: transparent !important;
+}
+
+.themes span {
+    font-size: 1.5vw;
+}
+
+.theme-dark .themes span {
+    color: var(--light-color);
+    text-shadow: 1px 1px white;
+}
+
+.theme-light .themes span {
+    color: var(--steel-color);
+    text-shadow: 1px 1px black;
+}

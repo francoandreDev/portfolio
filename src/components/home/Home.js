@@ -10,11 +10,12 @@ const Home = () => {
     const theme = useSelector((state) => state.theme);
     const [mouseX, setMouseX] = useState(null);
     const [mouseY, setMouseY] = useState(null);
+    const [scrollY, setScrollY] = useState(0);
     const time = 0.8;
     const controlAnimation = `${time}s ease forwards`;
     const wave1 = { animation: `waves-growing-1 ${controlAnimation}` };
     const wave2 = { animation: `waves-growing-2 ${controlAnimation}` };
-    const styleDefaultWaves = {opacity: 0};
+    const styleDefaultWaves = { opacity: 0 };
     const [hasUserClick, setHasUserClick] = useState(false);
 
     const wavesElement = (
@@ -22,8 +23,9 @@ const Home = () => {
             className="wave"
             id="wave-1"
             style={{
-                top: `calc(${mouseY}px - 7.5vw)`,// calc(cursor position - total width / 2)
-                left: `calc(${mouseX}px - 7.5vw)`// calc(cursor position - total hight / 2)
+                top: `calc(${mouseY+scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
+                left: `calc(${mouseX}px - 7.5vw)`, // calc(cursor position - total hight / 2)
+                animation: `waves-growing ${controlAnimation}`
             }}
         >
             <div
@@ -35,8 +37,7 @@ const Home = () => {
                     className="wave"
                     id="wave-3"
                     style={hasUserClick ? wave2 : styleDefaultWaves}
-                >
-                </div>
+                ></div>
             </div>
         </div>
     );
@@ -48,18 +49,18 @@ const Home = () => {
             setHasUserClick(true);
         };
         window.addEventListener("click", cripple);
+        setScrollY(window.scrollY);
         return () => {
             window.removeEventListener("click", cripple);
         };
-    }, [mouseX, mouseY, hasUserClick]);
+    }, [mouseX, mouseY, hasUserClick, scrollY]);
 
     useEffect(() => {
         if (!hasUserClick) return;
         setTimeout(() => {
             setHasUserClick(false);
         }, time * 1000); //break because the previous effect is running yet
-    }, [hasUserClick])
-
+    }, [hasUserClick]);
 
     return (
         <div className={`bg-home ${theme}`}>
