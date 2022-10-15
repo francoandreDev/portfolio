@@ -15,6 +15,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "git:merge:1": "git merge main",
+    "git:merge:2": "git checkout main",
+    "git:merge:3": "git merge dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
