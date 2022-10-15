@@ -25,6 +25,7 @@ footer span {
 
 span::selection {
     background-color: transparent;
+    color: white;
     animation: size 1s linear, width 1s ease infinite;
     -webkit-animation: size 1s linear, width 1s ease infinite;
 }

@@ -3,10 +3,12 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 75vh;
-    margin-top: 8rem;
-    margin-bottom: 15rem;
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 8rem;
+    padding-bottom: 15rem;
     font-family: var(--font-main);
+    overflow-x: visible;
 }
 
 main > *::selection {
@@ -34,6 +36,7 @@ h1::selection {
 }
 
 h1 {
+    cursor: pointer;
     font-weight: 400;
 }
 
@@ -41,4 +44,17 @@ h1::selection {
     text-shadow: -1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff,
         1px 1px #f3f3f2, 2px 2px #6ac7c2, -2px -2px #ff0468;
     box-shadow: 0px 10px 0px 1px rgba(0, 0, 0, 0.75);
+}
+
+main h2{
+    cursor: pointer;
+}
+
+main h2:hover,
+main h1:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
