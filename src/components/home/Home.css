@@ -14,6 +14,8 @@
     --light-border-header-and-footer: 1px double #d3d3d3;
     --dark-bg-color-header-and-footer: #000000e6;
     --dark-border-header-and-footer: 1px double #808080;
+    --light-border-main: 2px double #888888;
+    --dark-border-main: 2px double #222222;
     /*----------------------------Colors--------------------------------*/
     /*-----------------------------Fonts--------------------------------*/
     --font-main: "Source Sans Pro", sans-serif;

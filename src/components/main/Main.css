@@ -1,13 +1,14 @@
 main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    flex-grow: 1;
     width: 100vw;
     min-height: 100vh;
-    padding: 8rem 0;
+    padding-top: 12vh;
     font-family: var(--font-main);
     overflow-x: visible;
+    position: relative;
 }
 
 main > *::selection {
@@ -45,15 +46,52 @@ h1::selection {
     box-shadow: 0px 10px 0px 1px rgba(0, 0, 0, 0.75);
 }
 
-main h2{
+main h2 {
     cursor: pointer;
 }
 
-main h2:hover,
-main h1:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
+#topicId {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.presentation,
+.topic {
+    padding: 15px;
+    text-align: center;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.presentation > *,
+.topic > * {
+    margin-bottom: 20px;
+}
+
+.presentation {
+    background-color: rgb(33, 38, 44);
+    width: 40%;
+}
+
+.theme-light .presentation {
+    border-right: var(--dark-border-main);
+}
+
+.theme-dark .presentation {
+    border-right: var(--light-border-main);
+}
+
+.presentation * {
+    border: none;
+}
+
+.topic {
+    background-color: rgb(14, 37, 59);
+    width: 60%;
+}
+
+.presentation p,
+.topic p {
+    white-space: pre-wrap;
 }
