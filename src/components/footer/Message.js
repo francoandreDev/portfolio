@@ -3,12 +3,12 @@ import React from "react";
 const Message = ({ message, show, setShow }) => {
     return (
         <>
-            <span
+            <p
                 onClick={() => setShow((show) => !show)}
                 className={`${show ? "show" : "transparent"}`}
             >
                 {show && message}
-            </span>
+            </p>
         </>
     );
 };

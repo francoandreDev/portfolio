@@ -30,6 +30,7 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     min-width: max-content;
+    background-color: transparent;
 }
 
 .config > i {

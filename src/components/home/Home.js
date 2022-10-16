@@ -8,9 +8,9 @@ import "./Home.css";
 
 const Home = () => {
     const theme = useSelector((state) => state.theme);
+    const scrollY = useSelector((state) => state.scrollY);
     const [mouseX, setMouseX] = useState(null);
     const [mouseY, setMouseY] = useState(null);
-    const [scrollY, setScrollY] = useState(0);
     const time = 0.8;
     const controlAnimation = `${time}s ease forwards`;
     const wave1 = { animation: `waves-growing-1 ${controlAnimation}` };
@@ -23,7 +23,7 @@ const Home = () => {
             className="wave"
             id="wave-1"
             style={{
-                top: `calc(${mouseY+scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
+                top: `calc(${mouseY + scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
                 left: `calc(${mouseX}px - 7.5vw)`, // calc(cursor position - total hight / 2)
                 animation: `waves-growing ${controlAnimation}`
             }}
@@ -49,11 +49,10 @@ const Home = () => {
             setHasUserClick(true);
         };
         window.addEventListener("click", cripple);
-        setScrollY(window.scrollY);
         return () => {
             window.removeEventListener("click", cripple);
         };
-    }, [mouseX, mouseY, hasUserClick, scrollY]);
+    }, [mouseX, mouseY, hasUserClick]);
 
     useEffect(() => {
         if (!hasUserClick) return;

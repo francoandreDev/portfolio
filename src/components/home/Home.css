@@ -10,6 +10,10 @@
     --dark-color-main-selection: #36df27;
     --light-color-main-selection: #0fff93;
     --color-footer: #ff0644;
+    --light-bg-color-header-and-footer: #828282f2;
+    --light-border-header-and-footer: 1px double #d3d3d3;
+    --dark-bg-color-header-and-footer: #000000e6;
+    --dark-border-header-and-footer: 1px double #808080;
     /*----------------------------Colors--------------------------------*/
     /*-----------------------------Fonts--------------------------------*/
     --font-main: "Source Sans Pro", sans-serif;

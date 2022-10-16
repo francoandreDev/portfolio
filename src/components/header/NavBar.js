@@ -1,10 +1,26 @@
-import React from "react";
-import {Link} from "react-scroll"
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setScrollY } from "../../store/slices/scrollY.slice";
+import { Link } from "react-scroll";
 import "./NavBar.css";
 
 const NavBar = () => {
+    const dispatch = useDispatch();
+    const scrollY = useSelector(state=>state.scrollY)
+
+    useEffect(() => {
+        const updateScroll = () => {
+            if (window.scrollY !== scrollY) {
+                dispatch(setScrollY(window.scrollY))
+            }
+        };
+        window.addEventListener("scroll", updateScroll);
+        return () => {
+            window.removeEventListener("scroll", updateScroll);
+        };
+    }, [dispatch, scrollY]);
     return (
-        <header id="header">
+        <header id="header" style={scrollY === 0 ? { height: "12vh" } : {}}>
             <ul>
                 <li>
                     <Link to="aboutMe" smooth={true} duration={450}>
