@@ -7,9 +7,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 25vh;
-    background-color: var(--dark-bg-color-header-and-footer);
-    border-top: var(--dark-border-header-and-footer);
+    min-height: 15vh;
     overflow-y: hidden;
     transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
     -webkit-transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
@@ -19,7 +17,7 @@ footer {
 }
 
 footer:hover {
-    min-height: 25vh;
+    min-height: 15vh;
 }
 
 footer:not(:hover) {
@@ -40,6 +38,11 @@ footer:not(:hover) > p {
 .theme-light footer {
     background-color: var(--light-bg-color-header-and-footer);
     border-top: var(--light-border-header-and-footer);
+}
+
+.theme-dark footer {
+    background-color: var(--dark-bg-color-header-and-footer);
+    border-top: var(--dark-border-header-and-footer);
 }
 
 footer>p {

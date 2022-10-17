@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Footer.css";
 import Message from "./Message";
+import "./Footer.css";
 
 const Footer = () => {
     const [show, setShow] = useState(true);

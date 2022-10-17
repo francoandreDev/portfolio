@@ -5,17 +5,15 @@
     --light-color: #d7d7d7;
     --dark-color: #272727;
     --steel-color: dimgray;
-    --link-light-color: #248eff;
-    --link-dark-color: #142ffcc8;
+    --link-light-color: #4ca8ff;
+    --link-dark-color: #1494fcc8;
     --dark-color-main-selection: #36df27;
     --light-color-main-selection: #0fff93;
     --color-footer: #ff0644;
-    --light-bg-color-header-and-footer: #828282f2;
+    --light-bg-color-header-and-footer: #868686f2;
     --light-border-header-and-footer: 1px double #d3d3d3;
-    --dark-bg-color-header-and-footer: #000000e6;
+    --dark-bg-color-header-and-footer: #313131f5;
     --dark-border-header-and-footer: 1px double #808080;
-    --light-border-main: 2px double #888888;
-    --dark-border-main: 2px double #222222;
     /*----------------------------Colors--------------------------------*/
     /*-----------------------------Fonts--------------------------------*/
     --font-main: "Source Sans Pro", sans-serif;
@@ -63,6 +61,10 @@ progress {
     border: inherit;
     color: inherit;
     font-family: inherit;
+}
+
+div, img {
+    overflow-y: hidden;
 }
 
 .bg-home {

@@ -8,8 +8,6 @@ header {
     font-size: medium;
     width: 100%;
     font-family: var(--font-header);
-    background-color: var(--dark-bg-color-header-and-footer);
-    border-bottom: var(--dark-border-header-and-footer);
     overflow-y: hidden;
     transition: height 1s ease-in-out, background-color 1s ease-in-out;
     -webkit-transition: height 1s ease-in-out, background-color 1s ease-in-out;
@@ -30,6 +28,11 @@ header:not(:hover) {
 .theme-light header {
     background-color: var(--light-bg-color-header-and-footer);
     border-bottom: var(--light-border-header-and-footer);
+}
+
+.theme-dark header {
+    background-color: var(--dark-bg-color-header-and-footer);
+    border-bottom: var(--dark-border-header-and-footer);
 }
 
 header > ul,
@@ -58,6 +61,24 @@ li {
     align-items: center;
     font-size: 4vh;
     font-weight: 700;
+}
+
+.theme-light a:hover,
+.theme-light li:hover::after {
+    color: var(--link-light-color);
+}
+
+.theme-dark a:hover,
+.theme-dark li:hover::after {
+    color: var(--link-dark-color);
+}
+
+a:hover, li:hover::after {
+    transition: color 1s ease-in-out;
+    -webkit-transition: color 1s ease-in-out;
+    -moz-transition: color 1s ease-in-out;
+    -ms-transition: color 1s ease-in-out;
+    -o-transition: color 1s ease-in-out;
 }
 
 .theme-dark li {

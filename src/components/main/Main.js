@@ -1,18 +1,18 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import "./Main.css";
-import Presentation from "./Presentation";
+import {aboutMe, technologies, experience, contactMe} from "./data/exports"
 import Topic from "./Topic";
+import React from "react";
+import Presentation from "./Presentation";
+import "./Main.css";
 
 const Main = () => {
     const topicId = useSelector((state) => state.topicId);
 
-    const aboutMe = <p>Hello world</p>;
     const topics = [
         { id: "aboutMe", title: "About me", content: aboutMe },
-        { id: "technologies", title: "Technologies", content: aboutMe },
-        { id: "experience", title: "Experience", content: aboutMe },
-        { id: "contactMe", title: "Contact me", content: aboutMe }
+        { id: "technologies", title: "Technologies", content: technologies },
+        { id: "experience", title: "Experience", content: experience },
+        { id: "contactMe", title: "Contact me", content: contactMe }
     ];
 
     return (
@@ -25,7 +25,7 @@ const Main = () => {
                         <Topic
                             id={obj.id}
                             title={obj.title}
-                            content={aboutMe}
+                            content={obj.content}
                             key={obj.id}
                         />
                     );

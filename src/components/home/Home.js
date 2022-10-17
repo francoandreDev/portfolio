@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Config from "../config/Config";
-import Footer from "../footer/Footer";
-import NavBar from "../header/NavBar";
-import Main from "../main/Main";
+import GetUserName from "./GetUserName";
 import "./Home.css";
+import ShowHome from "./ShowHome";
 
 const Home = () => {
+    const userName = useSelector((state) => state.userName);
     const theme = useSelector((state) => state.theme);
     const scrollY = useSelector((state) => state.scrollY);
     const [mouseX, setMouseX] = useState(null);
@@ -64,10 +63,7 @@ const Home = () => {
     return (
         <div className={`bg-home ${theme}`}>
             {hasUserClick && wavesElement}
-            <NavBar />
-            <Main />
-            <Footer />
-            <Config />
+            {userName === "" ? <GetUserName/> : <ShowHome/>}
         </div>
     );
 };
