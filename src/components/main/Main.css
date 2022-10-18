@@ -184,3 +184,45 @@ aside {
 .container-demo ~ p {
     margin-top: 30px;
 }
+
+.show-height {
+    animation: height 1s ease;
+    -webkit-animation: height 1s ease;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.hide-height {
+    animation: reverse-height 1s ease;
+    -webkit-animation: reverse-height 1s ease;
+    height: 0;
+    overflow-y: hidden;
+}
+
+@keyframes height {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes reverse-height {
+    from {
+        height: 100%;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.f-color {
+    filter: saturate(1.2);
+    -webkit-filter: saturate(1.2);
+}
+
+.f-gray {
+    filter: grayscale(0.9);
+    -webkit-filter: grayscale(0.9);
+}

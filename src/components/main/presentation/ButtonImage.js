@@ -4,14 +4,19 @@ const ButtonImage = ({ img, text }) => {
     const [show, setShow] = useState(false);
 
     return (
-        <div>
+        <div className="button-image">
             <button
                 className="container-demo"
                 onClick={() => setShow((show) => !show)}
             >
-                <img src={img} alt="demo" style={{ cursor: "pointer" }} />
+                <img
+                    src={img}
+                    alt="demo"
+                    style={{ cursor: "pointer"}}
+                    className={show ? "f-color" : "f-gray"}
+                />
             </button>
-            {show && text}
+            <p className={show ? "show-height" : "hide-height"}>{text}</p>
         </div>
     );
 };

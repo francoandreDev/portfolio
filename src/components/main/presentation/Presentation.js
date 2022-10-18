@@ -8,34 +8,35 @@ const Presentation = () => {
     const userName = useSelector((state) => state.userName);
 
     return (
-        <>
-            <div className="presentation" style={{position: "relative", zIndex: 2, backgroundColor: "rgb(33, 38, 44)"}}>
-                <h1>Presentation</h1>
-                <section className="content">
-                    <article className="content">
-                        <h2>React Developer</h2>
-                        <p>
-                            Welcome {userName}, my name is {"\n"}
-                            Franco André. {"\n"}
-                            I'm a full-stack programmer focus in work with
-                            React. {"\n"}
-                        </p>
-                    </article>
-                    <div className="container-photo">
-                        <img src={profile} alt="profile" className="profile" />
-                    </div>
-                </section>
-                <aside>
-                    {textsImages.map((obj) => (
-                        <ButtonImage
-                            img={obj.img}
-                            text={obj.text}
-                            key={obj.id}
-                        />
-                    ))}
-                </aside>
-            </div>
-        </>
+        <div
+            className="presentation"
+            style={{
+                position: "relative",
+                zIndex: 2,
+                backgroundColor: "rgb(33, 38, 44)"
+            }}
+        >
+            <h1>Presentation</h1>
+            <section className="content">
+                <article className="content">
+                    <h2>React Developer</h2>
+                    <p>
+                        Welcome {userName}, my name is {"\n"}
+                        Franco André. {"\n"}
+                        I'm a full-stack programmer focus in work with React.{" "}
+                        {"\n"}
+                    </p>
+                </article>
+                <div className="container-photo">
+                    <img src={profile} alt="profile" className="profile" />
+                </div>
+            </section>
+            <aside>
+                {textsImages.map((obj) => (
+                    <ButtonImage img={obj.img} text={obj.text} key={obj.id} />
+                ))}
+            </aside>
+        </div>
     );
 };
 
