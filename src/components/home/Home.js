@@ -24,6 +24,7 @@ const Home = () => {
             style={{
                 top: `calc(${mouseY + scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
                 left: `calc(${mouseX}px - 7.5vw)`, // calc(cursor position - total hight / 2)
+                zIndex: 1,
                 animation: `waves-growing ${controlAnimation}`
             }}
         >

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import {aboutMe, technologies, experience, contactMe} from "./data/exports"
 import Topic from "./Topic";
 import React from "react";
-import Presentation from "./Presentation";
+import Presentation from "./presentation/Presentation";
 import "./Main.css";
 
 const Main = () => {

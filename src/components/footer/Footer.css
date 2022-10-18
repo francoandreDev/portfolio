@@ -2,6 +2,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 2;
     font-family: var(--font-footer);
     width: 100%;
     display: flex;
@@ -28,7 +29,6 @@ footer:not(:hover) {
 
 footer:not(:hover) > p {
     transition: color 1s ease-in-out;
-    color: transparent;
     -webkit-transition: color 1s ease-in-out;
     -moz-transition: color 1s ease-in-out;
     -ms-transition: color 1s ease-in-out;

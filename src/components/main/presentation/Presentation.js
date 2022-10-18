@@ -1,12 +1,15 @@
 import React from "react";
-import profile from "../../assets/images/profile-photo.png";
+import profile from "../../../assets/images/profile-photo.png";
 import { useSelector } from "react-redux";
+import ButtonImage from "./ButtonImage";
+import { textsImages } from "../data/exports";
 
 const Presentation = () => {
     const userName = useSelector((state) => state.userName);
+
     return (
         <>
-            <div className="presentation">
+            <div className="presentation" style={{position: "relative", zIndex: 2, backgroundColor: "rgb(33, 38, 44)"}}>
                 <h1>Presentation</h1>
                 <section className="content">
                     <article className="content">
@@ -23,13 +26,13 @@ const Presentation = () => {
                     </div>
                 </section>
                 <aside>
-                    <p>
-                        I'm interesting in work real soon. {"\n"}
-                        Every day I learn or put on trial new knowledge I gain.{" "}
-                        {"\n"}I see all as one step to be better. {"\n"}
-                        My goal for this year is get a job in React and start to
-                        learn NextJs. {"\n"}
-                    </p>
+                    {textsImages.map((obj) => (
+                        <ButtonImage
+                            img={obj.img}
+                            text={obj.text}
+                            key={obj.id}
+                        />
+                    ))}
                 </aside>
             </div>
         </>

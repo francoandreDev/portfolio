@@ -69,7 +69,7 @@ div, img {
 
 .bg-home {
     width: 100vw;
-    min-height: 100vh;
+    height: calc(100vh + 40vh);
     display: flex;
     flex-direction: column;
     justify-content: center;

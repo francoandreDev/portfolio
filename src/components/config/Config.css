@@ -1,6 +1,6 @@
 .config {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     bottom: 2rem;
     right: 7vw;
     width: auto;
