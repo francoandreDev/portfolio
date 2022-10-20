@@ -112,11 +112,11 @@ h1,
 .topic h2 {
     font-size: 5vh;
     color: transparent;
-    text-shadow: 0 0 #198ab7;
+    -webkit-text-stroke: 1px #198ab7;
 }
 
 .theme-light .topic h2 {
-    text-shadow: 0 0 #042b3a;
+    -webkit-text-stroke: 1px #06212c;
 }
 
 .presentation p,
