@@ -5,8 +5,27 @@ form {
     gap: 20px;
 }
 
-form > * {
+form > div {
+    position: relative;
+    z-index: 1;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: 1px solid gray;
+}
+
+form > div > * {
     gap: 20px;
+    border: none;
+}
+
+form > div > label,
+form > div > p {
+    color: gray;
 }
 
 input {
@@ -15,8 +34,4 @@ input {
     border: 1px solid gray;
     outline: none;
     width: 100%;
-}
-
-#input-username {
-    color: gray !important;
 }

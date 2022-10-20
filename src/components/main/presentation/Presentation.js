@@ -1,11 +1,13 @@
 import React from "react";
-import profile from "../../../assets/images/profile-photo.png";
+import profileDark from "../../../assets/images/profile-photo-dark.png";
+import profileLight from "../../../assets/images/profile-photo-light.png";
 import { useSelector } from "react-redux";
 import ButtonImage from "./ButtonImage";
 import { textsImages } from "../data/exports";
 
 const Presentation = () => {
     const userName = useSelector((state) => state.userName);
+    const theme = useSelector((state) => state.theme)
 
     return (
         <div
@@ -28,7 +30,7 @@ const Presentation = () => {
                     </p>
                 </article>
                 <div className="container-photo">
-                    <img src={profile} alt="profile" className="profile" />
+                    <img src={theme === "theme-dark" ? profileDark : profileLight } alt="profile" className="profile" />
                 </div>
             </section>
             <aside>

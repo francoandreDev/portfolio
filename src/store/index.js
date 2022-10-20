@@ -9,6 +9,6 @@ export default configureStore({
         theme,
         scrollY,
         topicId,
-        userName
+        userName,
     }
 });

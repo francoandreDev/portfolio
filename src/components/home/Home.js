@@ -1,69 +1,16 @@
-import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Wave from "../ClickLogic/Wave";
+import ShowHome from "./ShowHome";
 import GetUserNameForm from "./GetUserNameForm";
 import "./Home.css";
-import ShowHome from "./ShowHome";
 
 const Home = () => {
     const userName = useSelector((state) => state.userName);
     const theme = useSelector((state) => state.theme);
-    const scrollY = useSelector((state) => state.scrollY);
-    const [mouseX, setMouseX] = useState(null);
-    const [mouseY, setMouseY] = useState(null);
-    const time = 0.8;
-    const controlAnimation = `${time}s ease forwards`;
-    const wave1 = { animation: `waves-growing-1 ${controlAnimation}` };
-    const wave2 = { animation: `waves-growing-2 ${controlAnimation}` };
-    const styleDefaultWaves = { opacity: 0 };
-    const [hasUserClick, setHasUserClick] = useState(false);
-
-    const wavesElement = (
-        <div
-            className="wave"
-            id="wave-1"
-            style={{
-                top: `calc(${mouseY + scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
-                left: `calc(${mouseX}px - 7.5vw)`, // calc(cursor position - total hight / 2)
-                zIndex: 1,
-                animation: `waving-growth ${controlAnimation}`
-            }}
-        >
-            <div
-                className="wave"
-                id="wave-2"
-                style={hasUserClick ? wave1 : styleDefaultWaves}
-            >
-                <div
-                    className="wave"
-                    id="wave-3"
-                    style={hasUserClick ? wave2 : styleDefaultWaves}
-                ></div>
-            </div>
-        </div>
-    );
-
-    useEffect(() => {
-        const cripple = (event) => {
-            if (mouseX !== event.clientX) setMouseX(event.clientX);
-            if (mouseY !== event.clientY) setMouseY(event.clientY);
-            setHasUserClick(true);
-        };
-        window.addEventListener("click", cripple);
-        return () => {
-            window.removeEventListener("click", cripple);
-        };
-    }, [mouseX, mouseY, hasUserClick]);
-
-    useEffect(() => {
-        if (!hasUserClick) return;
-        setTimeout(() => {
-            setHasUserClick(false);
-        }, time * 1000); //break because the previous effect is running yet
-    }, [hasUserClick]);
 
     return (
         <div className={`bg-home ${theme} max-size flex-column-center`}>
-            {hasUserClick && wavesElement}
+            <Wave/>
             {userName === "" ? <GetUserNameForm/> : <ShowHome/>}
         </div>
     );

@@ -23,7 +23,6 @@ const Main = () => {
                 .map((obj) => {
                     return (
                         <Topic
-                            id={obj.id}
                             title={obj.title}
                             content={obj.content}
                             key={obj.id}

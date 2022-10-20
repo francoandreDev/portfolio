@@ -61,14 +61,19 @@ li {
     align-items: center;
     font-size: 4vh;
     font-weight: 700;
+    transition: color 1s ease-in-out;
+    -webkit-transition: color 1s ease-in-out;
+    -moz-transition: color 1s ease-in-out;
+    -ms-transition: color 1s ease-in-out;
+    -o-transition: color 1s ease-in-out;
 }
 
-.theme-light a:hover,
+.theme-light li:hover,
 .theme-light li:hover::after {
     color: var(--link-light-color);
 }
 
-.theme-dark a:hover,
+.theme-dark li:hover,
 .theme-dark li:hover::after {
     color: var(--link-dark-color);
 }

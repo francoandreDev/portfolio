@@ -72,6 +72,10 @@ main h2 {
     min-height: 100vh;
 }
 
+.topic {
+    padding-top: 45px;
+}
+
 h1,
 .topic h2 {
     margin-bottom: 70px;
@@ -79,6 +83,10 @@ h1,
 
 .presentation {
     width: 40%;
+}
+
+.topic {
+    width: 60%;
 }
 
 .theme-light .presentation {
@@ -101,8 +109,14 @@ h1,
     border: none;
 }
 
-.topic {
-    width: 60%;
+.topic h2 {
+    font-size: 5vh;
+    color: transparent;
+    text-shadow: 0 0 #198ab7;
+}
+
+.theme-light .topic h2 {
+    text-shadow: 0 0 #042b3a;
 }
 
 .presentation p,
@@ -136,12 +150,18 @@ h1,
 .container-photo {
     width: 15vw;
     aspect-ratio: 0.8/1;
+    border: 1px solid;
+    border-radius: 4px;
     box-shadow: 7px 10px 15px 0 rgb(31, 50, 68);
     transition: all 1s ease-in-out;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 
 .container-photo:not(:hover) {
@@ -157,11 +177,16 @@ h1,
 .container-photo .profile {
     width: 100%;
     height: 100%;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+
+.theme-light .container-photo {
+    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
 }
 
 aside {

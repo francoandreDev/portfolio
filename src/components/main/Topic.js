@@ -1,13 +1,10 @@
 import React from "react";
 
-const Topic = ({ id, title, content }) => {
+const Topic = ({ title, content }) => {
     return (
         <div className="topic">
-            <div id="topicId"></div>
-            <h2 id={id}>{title}</h2>
-            <section>
-                {content}
-            </section>
+            <h2>{title}</h2>
+            <section className="flex-column-around">{content}</section>
         </div>
     );
 };

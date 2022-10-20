@@ -13,6 +13,7 @@
     --light-bg-color-header-and-footer: #868686f2;
     --light-border-header-and-footer: 1px double #d3d3d3;
     --dark-bg-color-header-and-footer: #313131f5;
+    --light-bg-color-header-and-footer: #005193c8;
     --dark-border-header-and-footer: 1px double #808080;
     /*----------------------------Colors--------------------------------*/
     /*-----------------------------Fonts--------------------------------*/
@@ -95,6 +96,14 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.flex-column-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
 }
 
 .bg-home {

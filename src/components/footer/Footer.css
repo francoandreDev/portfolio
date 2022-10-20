@@ -47,9 +47,9 @@ footer>p {
     position: absolute;
     cursor: pointer;
     color: var(--color-footer);
-    background-color: transparent;
     text-align: center;
     border: none;
+    background-color: transparent;
     width: fit-content !important;
     padding: 0 2px;
 }
