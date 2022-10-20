@@ -21,14 +21,27 @@ const NavBar = () => {
     }, [dispatch, scrollY]);
 
     return (
-        <header id="header" style={scrollY === 0 ? { height: "12vh" } : {}}>
-            <ul>
-                <ElementBar id={"aboutMe"} text={"About me"} />
-                <ElementBar id={"technologies"} text={"Technologies"} />
-                <ElementBar id={"experience"} text={"Experience"} />
-                <ElementBar id={"contactMe"} text={"Contact me"} />
-            </ul>
-        </header>
+        <>
+            <div
+                className="header-static"
+                style={{
+                    position: "relative",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "12vh",
+                    backgroundColor: "transparent"
+                }}
+            ></div>
+            <header id="header" style={scrollY > 40 ? {} : { height: "12vh" }}>
+                <ul>
+                    <ElementBar id={"aboutMe"} text={"About me"} />
+                    <ElementBar id={"technologies"} text={"Technologies"} />
+                    <ElementBar id={"experience"} text={"Experience"} />
+                    <ElementBar id={"contactMe"} text={"Contact me"} />
+                </ul>
+            </header>
+        </>
     );
 };
 

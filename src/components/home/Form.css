@@ -1,0 +1,22 @@
+form {
+    font-size: 2vw;
+    min-width: 100vw;
+    min-height: 100vh;
+    gap: 20px;
+}
+
+form > * {
+    gap: 20px;
+}
+
+input {
+    text-align: center;
+    font-size: 3vw;
+    border: 1px solid gray;
+    outline: none;
+    width: 100%;
+}
+
+#input-username {
+    color: gray !important;
+}

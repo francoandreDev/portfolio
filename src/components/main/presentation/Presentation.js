@@ -20,7 +20,7 @@ const Presentation = () => {
             <section className="content">
                 <article className="content">
                     <h2>React Developer</h2>
-                    <p>
+                    <p className="p-presentation">
                         Welcome {userName}, my name is {"\n"}
                         Franco André. {"\n"}
                         I'm a full-stack programmer focus in work with React.{" "}

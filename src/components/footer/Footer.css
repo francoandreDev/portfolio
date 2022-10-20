@@ -5,9 +5,6 @@ footer {
     z-index: 2;
     font-family: var(--font-footer);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 15vh;
     overflow-y: hidden;
     transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;

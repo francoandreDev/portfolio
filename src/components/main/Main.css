@@ -1,12 +1,11 @@
 main {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     flex-grow: 1;
     width: 100vw;
     min-height: 100vh;
     height: 100%;
-    margin-top: 12vh;
+    margin-bottom: 12vh;
     font-family: var(--font-main);
     overflow-x: visible;
     position: relative;
@@ -83,19 +82,11 @@ h1,
 }
 
 .theme-light .presentation {
-    background-color: rgb(157, 188, 223);
+    background-color: rgb(157, 188, 223) !important;
 }
 
 .theme-dark .presentation {
     background-color: rgb(33, 38, 44);
-}
-
-.presentation * {
-    border: none;
-}
-
-.topic {
-    width: 60%;
 }
 
 .theme-light .topic {
@@ -106,10 +97,22 @@ h1,
     background-color: rgb(14, 37, 59);
 }
 
+.presentation * {
+    border: none;
+}
+
+.topic {
+    width: 60%;
+}
+
 .presentation p,
 .topic p {
     white-space: pre-wrap;
     text-align: justify;
+}
+
+.p-presentation {
+    padding-left: 2vw;
 }
 
 .presentation .content {

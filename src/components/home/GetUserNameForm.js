@@ -1,51 +1,46 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUserName } from "../../store/slices/userName.slice";
+import "./Form.css";
 
 const GetUserName = () => {
     const dispatch = useDispatch();
     const nameRef = useRef();
-    const [showLabel, setShowLabel] = useState(false);
     const [name, setName] = useState("");
+    const [isName, setIsName] = useState(false);
+
     const formHandler = (e) => {
         e.preventDefault();
-        if (name.length > 1) {
-            dispatch(setUserName(name));
-        } else dispatch(setUserName(""));
+        isName ? dispatch(setUserName(name)) : dispatch(setUserName(""))
     };
+
     useEffect(() => {
         nameRef.current.focus();
     }, []);
+
     useEffect(() => {
-        (name.length < 2) ? setShowLabel(true) : setShowLabel(false);
+        const minLength = 2
+        name.length <= minLength ? setIsName(false) : setIsName(true);
     }, [name]);
     return (
         <form
+            autoComplete="off"
+            className="flex-column-center max-size"
             onSubmit={(event) => formHandler(event)}
-            style={{
-                display: "flex",
-                flexDirection: "column-reverse",
-                alignItems: "center",
-                fontSize: "2vw"
-            }}
         >
-            {showLabel && (
+            {isName ? (
                 <label htmlFor="input-username" style={{ color: "crimson" }}>
                     Length of your name must be greater
                 </label>
+            ) : (
+                <p>Press Enter to send your name</p>
             )}
             <input
                 type="text"
                 ref={nameRef}
                 placeholder="Write your name here "
                 value={name}
-                onChange={e=>setName(e.target.value)}
-                style={{
-                    textAlign: "center",
-                    fontSize: "5vw",
-                    outline: "none",
-                    border: "1px solid gray"
-                }}
+                onChange={(e) => setName(e.target.value)}
                 id="input-username"
             />
         </form>

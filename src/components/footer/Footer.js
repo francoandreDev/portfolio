@@ -17,9 +17,9 @@ const Footer = () => {
     const messages = ["I hope to work with you!", "Made by FrancoDev. 2022"];
 
     return (
-        <footer style={isBottom ? { height: "15vh" } : {}}>
-            <Message message={messages[0]} show={show} setShow={setShow} />
-            <Message message={messages[1]} show={!show} setShow={setShow} />
+        <footer className="flex-center" style={isBottom ? { height: "15vh" } : {height: "12vh"}}>
+            <Message message={messages[0]} show={!show} setShow={setShow} />
+            <Message message={messages[1]} show={show} setShow={setShow} />
         </footer>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import GetUserName from "./GetUserName";
+import GetUserNameForm from "./GetUserNameForm";
 import "./Home.css";
 import ShowHome from "./ShowHome";
 
@@ -25,7 +25,7 @@ const Home = () => {
                 top: `calc(${mouseY + scrollY}px - 7.5vw)`, // calc(cursor position - total width / 2)
                 left: `calc(${mouseX}px - 7.5vw)`, // calc(cursor position - total hight / 2)
                 zIndex: 1,
-                animation: `waves-growing ${controlAnimation}`
+                animation: `waving-growth ${controlAnimation}`
             }}
         >
             <div
@@ -62,9 +62,9 @@ const Home = () => {
     }, [hasUserClick]);
 
     return (
-        <div className={`bg-home ${theme}`}>
+        <div className={`bg-home ${theme} max-size flex-column-center`}>
             {hasUserClick && wavesElement}
-            {userName === "" ? <GetUserName/> : <ShowHome/>}
+            {userName === "" ? <GetUserNameForm/> : <ShowHome/>}
         </div>
     );
 };
