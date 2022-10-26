@@ -17,20 +17,12 @@ const Themes = () => {
             case "changeTheme":
                 return state.isDark
                     ? {
-                          icon: (
-                              <i
-                                  className="fa-regular fa-moon"
-                              ></i>
-                          ),
+                          icon: <i className="fa-regular fa-moon"></i>,
                           theme: "theme-light",
                           isDark: false
                       }
                     : {
-                          icon: (
-                              <i
-                                  className="fa-regular fa-sun"
-                              ></i>
-                          ),
+                          icon: <i className="fa-regular fa-sun"></i>,
                           theme: "theme-dark",
                           isDark: true
                       };
@@ -42,15 +34,24 @@ const Themes = () => {
     const [state, dispatchReducer] = useReducer(reducer, initialState);
 
     return (
-        <div className={`${state.isDark ? "theme-dark" : "theme-light"} themes`}>
+        <div
+            className={`${state.isDark ? "theme-dark" : "theme-light"} themes`}
+            style={{ backgroundColor: "transparent" }}
+        >
             <button
                 onClick={() => {
                     dispatchReducer({ type: "changeTheme" });
                     dispatchRedux(changeTheme());
                 }}
-                style={{color: `${!state.isDark ? "black" : "lightGray"}`}}
+                style={{
+                    color: `${!state.isDark ? "black" : "lightGray"}`,
+                    backgroundColor: "transparent",
+                    border: "none"
+                }}
             >
-                <span>Theme {state.icon}</span>
+                <span style={{ backgroundColor: "transparent" }}>
+                    Theme {state.icon}
+                </span>
             </button>
         </div>
     );

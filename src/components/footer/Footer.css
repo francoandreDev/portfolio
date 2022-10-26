@@ -1,35 +1,35 @@
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    position: relative;
     z-index: 2;
     font-family: var(--font-footer);
     width: 100%;
-    min-height: 15vh;
     overflow-y: hidden;
-    transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
-    -webkit-transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
-    -moz-transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
-    -ms-transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
-    -o-transition: height 1s ease-in-out, background-color 1s ease-in-out, min-height 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s ease-in-out, background-color 1s ease-in-out,
+        min-height 1s ease-in-out;
+    -webkit-transition: height 1s ease-in-out, background-color 1s ease-in-out,
+        min-height 1s ease-in-out;
+    -moz-transition: height 1s ease-in-out, background-color 1s ease-in-out,
+        min-height 1s ease-in-out;
+    -ms-transition: height 1s ease-in-out, background-color 1s ease-in-out,
+        min-height 1s ease-in-out;
+    -o-transition: height 1s ease-in-out, background-color 1s ease-in-out,
+        min-height 1s ease-in-out;
 }
 
 footer:hover {
-    min-height: 15vh;
+    height: 15vh;
 }
 
 footer:not(:hover) {
-    min-height: 5px;
-    height: 5px;
+    height: 10px;
     background-color: transparent;
 }
 
-footer:not(:hover) > p {
-    transition: color 1s ease-in-out;
-    -webkit-transition: color 1s ease-in-out;
-    -moz-transition: color 1s ease-in-out;
-    -ms-transition: color 1s ease-in-out;
-    -o-transition: color 1s ease-in-out;
+footer:not(:hover) p {
+    color: transparent;
 }
 
 .theme-light footer {
@@ -42,7 +42,7 @@ footer:not(:hover) > p {
     border-top: var(--dark-border-header-and-footer);
 }
 
-footer>p {
+footer p {
     font-size: 4vh;
     position: absolute;
     cursor: pointer;
@@ -52,9 +52,14 @@ footer>p {
     background-color: transparent;
     width: fit-content !important;
     padding: 0 2px;
+    transition: color 1s ease;
+    -webkit-transition: color 1s ease;
+    -moz-transition: color 1s ease;
+    -ms-transition: color 1s ease;
+    -o-transition: color 1s ease;
 }
 
-footer>p:hover {
+footer p:hover {
     color: var(--bg-light-color);
 }
 

@@ -3,10 +3,12 @@ form {
     min-width: 100vw;
     min-height: 100vh;
     gap: 20px;
+    background-color: inherit;
 }
 
 form > div {
     position: relative;
+    background-color: inherit;
     z-index: 1;
     width: 50vw;
     height: 50vh;
@@ -29,6 +31,7 @@ form > div > p {
 }
 
 input {
+    background-color: transparent;
     text-align: center;
     font-size: 3vw;
     border: 1px solid gray;

@@ -4,7 +4,7 @@
     --bg-dark-color: #2e2e2e;
     --light-color: #d7d7d7;
     --dark-color: #272727;
-    --steel-color: dimgray;
+    --steel-color: #4a4949;
     --link-light-color: #4ca8ff;
     --link-dark-color: #1494fcc8;
     --dark-color-main-selection: #36df27;
@@ -15,6 +15,8 @@
     --dark-bg-color-header-and-footer: #313131f5;
     --light-bg-color-header-and-footer: #12446fd0;
     --dark-border-header-and-footer: 1px double #808080;
+    --dark-card: #14141444;
+    --light-card: #f5f3f31e;
     /*----------------------------Colors--------------------------------*/
     /*-----------------------------Fonts--------------------------------*/
     --font-main: "Source Sans Pro", sans-serif;
@@ -25,7 +27,7 @@
     /*---------------------------SizeWaves---------------------------------*/
     --min-size-wave: 14vw;
     --max-size-wave: 16vw;
-    --translate-wave: calc((var(--max-size-wave) - var(--min-size-wave)) /-2);
+    --translate-wave: calc((var(--max-size-wave) - var(--min-size-wave)) / -2);
 }
 
 * {
@@ -35,7 +37,7 @@
     overflow-x: hidden;
 }
 
-h2::selection {
+*::selection {
     background-color: transparent;
     filter: contrast(150%);
     -webkit-filter: contrast(150%);
@@ -69,8 +71,6 @@ nav,
 main,
 option,
 progress {
-    background-color: inherit;
-    border: inherit;
     color: inherit;
     font-family: inherit;
 }
@@ -78,6 +78,16 @@ progress {
 div,
 img {
     overflow-y: hidden;
+}
+
+.border {
+    border: 1px solid;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 10px;
 }
 
 .max-size {
@@ -142,6 +152,19 @@ img {
 .theme-dark a:active {
     filter: brightness(50%);
     -webkit-filter: brightness(50%);
+}
+
+.card {
+    backdrop-filter: blur(15px);
+    z-index: 1;
+}
+
+.theme-dark .card {
+    background-color: var(--dark-card);
+}
+
+.theme-light .card {
+    background-color: var(--light-card);
 }
 
 @keyframes toDay {

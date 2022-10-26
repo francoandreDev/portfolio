@@ -46,12 +46,10 @@
 
 .theme-dark .config > i {
     color: var(--light-color);
-    text-shadow: 1px 1px white -1px -1px black;
 }
 
 .theme-light .config > i {
     color: var(--steel-color);
-    text-shadow: 1px 1px black, -1px -1px black;
 }
 
 .config > i:hover {

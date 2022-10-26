@@ -5,7 +5,6 @@ main {
     width: 100vw;
     min-height: 100vh;
     height: 100%;
-    margin-bottom: 12vh;
     font-family: var(--font-main);
     overflow-x: visible;
     position: relative;
@@ -67,8 +66,8 @@ main h2 {
     text-align: center;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    height: 100%;
     min-height: 100vh;
 }
 
@@ -170,8 +169,8 @@ h1,
 }
 
 .container-photo:hover {
-    filter: contrast(1.2) blur(0.8px) grayscale(40%) opacity(0.9);
-    -webkit-filter: contrast(1.2) blur(0.8px) grayscale(40%) opacity(0.9);
+    filter: contrast(1.2) grayscale(40%) opacity(0.9);
+    -webkit-filter: contrast(1.2) grayscale(40%) opacity(0.9);
 }
 
 .container-photo .profile {
@@ -184,24 +183,79 @@ h1,
     -o-border-radius: inherit;
 }
 
+.presentation .container-photo:hover,
+.presentation .container-demo:hover {
+    position: relative;
+}
+
+.presentation .container-photo:hover::after,
+.presentation .container-demo:hover::after {
+    content: "Click me!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    font-size: large;
+    animation: appear 4s ease;
+    -webkit-animation: appear 4s ease;
+    opacity: 0;
+}
+
+@keyframes appear {
+    50% {
+        opacity: 1;
+}
+    100% {
+        opacity: 0;
+    }
+}
+
+.theme-light .presentation .container-photo:hover::after,
+.theme-light .presentation .container-demo:hover::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.theme-dark .presentation .container-photo:hover::after,
+.theme-light .presentation .container-demo:hover::after {
+    stroke: 1px solid rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
 .theme-light .container-photo {
     filter: brightness(90%);
     -webkit-filter: brightness(90%);
 }
 
 aside {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 0 50px;
     margin-top: 90px;
     gap: 50px;
     width: 100%;
 }
 
+.button-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
 .container-demo {
-    width: 100%;
+    width: 10vw;
     aspect-ratio: 1/1;
     overflow-y: hidden;
+    background-color: transparent;
 }
 
 .container-demo > img {
@@ -213,34 +267,46 @@ aside {
     margin-top: 30px;
 }
 
-.show-height {
-    animation: height 1s ease;
-    -webkit-animation: height 1s ease;
+.show-width {
+    animation: grow 2s ease-in-out;
+    -webkit-animation: grow 2s ease-in-out;
+    width: 100%;
     height: 100%;
     overflow-y: hidden;
 }
 
-.hide-height {
-    animation: reverse-height 1s ease;
-    -webkit-animation: reverse-height 1s ease;
+.hide-width {
+    animation: reverse-grow 2s ease-in-out;
+    -webkit-animation: reverse-grow 2s ease-in-out;
+    width: 0;
     height: 0;
     overflow-y: hidden;
 }
 
-@keyframes height {
-    from {
-        height: 0;
+@keyframes grow {
+    0% {
+        width: 0;
     }
-    to {
+    5% {
+        width: 0;
+        height: 10%;
+    }
+    100% {
+        width: 100%;
         height: 100%;
     }
 }
 
-@keyframes reverse-height {
-    from {
+@keyframes reverse-grow {
+    0% {
+        width: 100%;
         height: 100%;
     }
-    to {
+    95% {
+        height: 20%;
+    }
+    100% {
+        width: 0;
         height: 0;
     }
 }
@@ -251,6 +317,16 @@ aside {
 }
 
 .f-gray {
-    filter: grayscale(0.9);
-    -webkit-filter: grayscale(0.9);
+    filter: grayscale(0.8);
+    -webkit-filter: grayscale(0.8);
+}
+
+.image-topic {
+    width: 3vh;
+    aspect-ratio: 1/1;
+}
+
+.image-topic > img {
+    width: 100%;
+    height: 100%;
 }

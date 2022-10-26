@@ -4,6 +4,7 @@ import experience from "./experience";
 import contactMe from "./contactMe";
 import texts from "./texts";
 import images from "./images";
+import presentations from "./presentations";
 
 let textsImages = []
 
@@ -12,4 +13,4 @@ texts.forEach((text, index) => {
     textsImages.push(obj)
 })
 
-export { aboutMe, technologies, experience, contactMe, textsImages };
+export { presentations, aboutMe, technologies, experience, contactMe, textsImages };
