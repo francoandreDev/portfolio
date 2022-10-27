@@ -1,11 +1,9 @@
 import React from "react";
 
-const InfoCard = ({img, alt, text}) => {
+const InfoCard = ({ icon, text }) => {
     return (
-        <section className="flex-center" style={{gap: "0.5vw"}}>
-            <div className="image-topic">
-                <img src={img} alt={alt} />
-            </div>
+        <section className="flex-center" style={{ gap: "0.5vw" }}>
+            <i className={icon}></i>
             <p>{text}</p>
         </section>
     );

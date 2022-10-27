@@ -1,46 +1,37 @@
 import CardSection from "./CardSection";
-import spainImage from "../../../assets/images/data/spain.png";
-import englishImage from "../../../assets/images/data/uk.png";
-import responsibleImage from "../../../assets/images/data/responsible.png";
-import resilientImage from "../../../assets/images/data/resilient.png";
-import creativeImage from "../../../assets/images/data/creative.png";
-import punctualityImage from "../../../assets/images/data/punctuality.png";
-import talkingImage from "../../../assets/images/data/good-talking.png";
-import hearImage from "../../../assets/images/data/good-listener.png";
 
 const dataLanguages = [
     {
         id: "es1",
-        img: spainImage,
-        alt: "es-flag",
-        text: "Native"
+        icon: "fa-solid fa-language",
+        text: "Spain Native"
     },
     {
         id: "en2",
-        img: englishImage,
-        alt: "en-flag",
-        text: "B1"
+        icon: "fa-solid fa-language",
+        text: "English B1"
     }
 ];
 
 const dataTeamWork = [
     {
         id: "SSTeam1",
-        img: responsibleImage,
-        alt: "responsible",
+        icon: "fa-solid fa-list-check",
         text: "Responsible"
     },
-    { id: "SSTeam2", img: resilientImage, alt: "resilient", text: "Resilient" },
+    {
+        id: "SSTeam2",
+        icon: "fa-solid fa-dumbbell",
+        text: "Resilient"
+    },
     {
         id: "SSTeam3",
-        img: talkingImage,
-        alt: "good-expressing",
+        icon: "fa-solid fa-comment-sms",
         text: "Good expressing"
     },
     {
         id: "SSTeam4",
-        img: hearImage,
-        alt: "good-listener",
+        icon: "fa-solid fa-ear-listen",
         text: "Good listener"
     }
 ];
@@ -48,21 +39,22 @@ const dataTeamWork = [
 const dataLonely = [
     {
         id: "SSLonely1",
-        img: responsibleImage,
-        alt: "responsible",
+        icon: "fa-solid fa-list-check",
         text: "Responsible"
     },
     {
         id: "SSLonely2",
-        img: resilientImage,
-        alt: "resilient",
+        icon: "fa-solid fa-dumbbell",
         text: "Resilient"
     },
-    { id: "SSLonely3", img: creativeImage, alt: "creative", text: "Creative" },
+    {
+        id: "SSLonely3",
+        icon: "fa-regular fa-lightbulb",
+        text: "Creative"
+    },
     {
         id: "SSLonely4",
-        img: punctualityImage,
-        alt: "punctual",
+        icon: "fa-solid fa-stopwatch",
         text: "Punctual"
     }
 ];

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import profileDark from "../../../assets/images/profile-photo-dark.png";
-import profileLight from "../../../assets/images/profile-photo-light.png";
+import profileDark from "../../../assets/images/presentation/profile-photo-dark.png";
+import profileLight from "../../../assets/images/presentation/profile-photo-light.png";
 import { useSelector } from "react-redux";
 import ButtonImage from "./ButtonImage";
 import { presentations, textsImages } from "../data/exports";
