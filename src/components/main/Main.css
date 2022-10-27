@@ -155,7 +155,7 @@ h1,
     flex-direction: column;
     justify-content: space-evenly;
     width: 15rem;
-    height: 18vw;
+    min-height: 18vw;
 }
 
 @media screen and (max-width:800px) {
@@ -190,6 +190,12 @@ h1,
 .container-photo:hover {
     filter: contrast(1.2) grayscale(40%) opacity(0.9);
     -webkit-filter: contrast(1.2) grayscale(40%) opacity(0.9);
+}
+
+@media screen and (max-width: 600px) {
+    .container-photo {
+        width: 40%;
+    }
 }
 
 .container-photo .profile {
