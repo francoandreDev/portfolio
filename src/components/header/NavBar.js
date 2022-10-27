@@ -1,25 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setScrollY } from "../../store/slices/scrollY.slice";
+import { setScrollX } from "../../store/slices/scrollX.slice";
 import "./NavBar.css";
 import ElementBar from "./ElementBar";
 
 const NavBar = () => {
     const dispatch = useDispatch();
     const scrollY = useSelector((state) => state.scrollY);
+    const scrollX = useSelector((state) => state.scrollX);
     const [selectedElement, setSelectedElement] = useState(null);
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const headerRef = useRef();
 
     useEffect(() => {
         const updateScroll = () => {
             if (window.scrollY !== scrollY) {
                 dispatch(setScrollY(window.scrollY));
+                scrollY < 40 ? setIsOpenMenu(true) : setIsOpenMenu(false);
+            }
+            if (window.scrollX === scrollX) {
+                dispatch(setScrollX(window.scrollX));
+                if (scrollX > 900) {
+                    setIsOpenMenu(false);
+                }
             }
         };
         window.addEventListener("scroll", updateScroll);
         return () => {
             window.removeEventListener("scroll", updateScroll);
         };
-    }, [dispatch, scrollY]);
+    }, [dispatch, scrollY, scrollX]);
+
+    useEffect(() => {
+        if (isOpenMenu) {
+            headerRef.current.style.height = "14vh";
+        }
+        if (!isOpenMenu) {
+            headerRef.current.style.height = "5px";
+        }
+    }, [isOpenMenu, headerRef.current?.style]);
 
     return (
         <>
@@ -34,7 +54,15 @@ const NavBar = () => {
                     backgroundColor: "transparent"
                 }}
             ></div>
-            <header id="header" style={scrollY > 40 ? {} : { height: "12vh" }}>
+            <i
+                className="fa-solid fa-bars menu-mobile"
+                onClick={() => setIsOpenMenu(false)}
+            ></i>
+            <header id="header" ref={headerRef}>
+                <i
+                    className="fa-solid fa-xmark menu-mobile"
+                    onClick={() => setIsOpenMenu(true)}
+                ></i>
                 <ul>
                     <ElementBar
                         id={"aboutMe"}
