@@ -17,13 +17,12 @@ const NavBar = () => {
         const updateScroll = () => {
             if (window.scrollY !== scrollY) {
                 dispatch(setScrollY(window.scrollY));
-                scrollY < 40 ? setIsOpenMenu(true) : setIsOpenMenu(false);
+                scrollY > 40 ? setIsOpenMenu(true) : setIsOpenMenu(false);
             }
-            if (window.scrollX === scrollX) {
-                dispatch(setScrollX(window.scrollX));
-                if (scrollX > 900) {
-                    setIsOpenMenu(false);
-                }
+            //!please get the x size of the screen not the scroll
+            if (window.innerWidth !== scrollX) {
+                dispatch(setScrollX(window.innerWidth));
+                scrollX < 900 ? setIsOpenMenu(false) : setIsOpenMenu(true);
             }
         };
         window.addEventListener("scroll", updateScroll);
@@ -33,13 +32,21 @@ const NavBar = () => {
     }, [dispatch, scrollY, scrollX]);
 
     useEffect(() => {
-        if (isOpenMenu) {
-            headerRef.current.style.height = "14vh";
+        if (scrollX < 900) {
+            if (!isOpenMenu) {
+                headerRef.current.style.height = "80vh";
+                headerRef.current.style.width = "100vw";
+                headerRef.current.style.left = "0";
+            }
+            if (isOpenMenu) {
+                headerRef.current.style.top = "0";
+                headerRef.current.style.left = "-100vw";
+            }
         }
-        if (!isOpenMenu) {
-            headerRef.current.style.height = "5px";
+        if (scrollX >= 900) {
+            headerRef.current.style.height = "auto";
         }
-    }, [isOpenMenu, headerRef.current?.style]);
+    }, [scrollX, isOpenMenu, headerRef.current?.style]);
 
     return (
         <>
@@ -53,16 +60,20 @@ const NavBar = () => {
                     height: "12vh",
                     backgroundColor: "transparent"
                 }}
-            ></div>
-            <i
-                className="fa-solid fa-bars menu-mobile"
-                onClick={() => setIsOpenMenu(false)}
-            ></i>
+            >
+                {isOpenMenu ? (
+                    <i
+                        className="fa-solid fa-bars menu-mobile"
+                        onClick={() => setIsOpenMenu(false)}
+                    ></i>
+                ) : (
+                    <i
+                        className="fa-solid fa-xmark menu-mobile"
+                        onClick={() => setIsOpenMenu(true)}
+                    ></i>
+                )}
+            </div>
             <header id="header" ref={headerRef}>
-                <i
-                    className="fa-solid fa-xmark menu-mobile"
-                    onClick={() => setIsOpenMenu(true)}
-                ></i>
                 <ul>
                     <ElementBar
                         id={"aboutMe"}

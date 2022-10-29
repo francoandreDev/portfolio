@@ -25,9 +25,14 @@
     --font-footer: "Alkalami", serif;
     /*-----------------------------Fonts--------------------------------*/
     /*---------------------------SizeWaves---------------------------------*/
-    --min-size-wave: 14vw;
-    --max-size-wave: 16vw;
-    --translate-wave: calc((var(--max-size-wave) - var(--min-size-wave)) / -2);
+    --min-size-wave: 5rem;
+    --max-size-wave: 7rem;
+    --min-translate-wave: calc(
+        (var(--max-size-wave) + var(--min-size-wave)) * 4 / 16
+    );
+    --max-translate-wave: calc(
+        (var(--max-size-wave) + var(--min-size-wave)) * 5 / 16
+    );
 }
 
 * {
@@ -212,20 +217,51 @@ img {
 @keyframes waving-growth {
     from {
         width: var(--min-size-wave);
+        transform: translate(
+            var(--max-translate-wave),
+            var(--max-translate-wave)
+        );
+        -webkit-transform: translate(
+            var(--max-translate-wave),
+            var(--max-translate-wave)
+        );
+        -moz-transform: translate(
+            var(--max-translate-wave),
+            var(--max-translate-wave)
+        );
+        -ms-transform: translate(
+            var(--max-translate-wave),
+            var(--max-translate-wave)
+        );
+        -o-transform: translate(
+            var(--max-translate-wave),
+            var(--max-translate-wave)
+        );
     }
     to {
         width: var(--max-size-wave);
-        transform: translate(var(--translate-wave), var(--translate-wave));
-        -webkit-transform: translate(
-            var(--translate-wave),
-            var(--translate-wave)
+        transform: translate(
+            var(--min-translate-wave),
+            var(--min-translate-wave)
         );
-        -moz-transform: translate(var(--translate-wave), var(--translate-wave));
-        -ms-transform: translate(var(--translate-wave), var(--translate-wave));
-        -o-transform: translate(var(--translate-wave), var(--translate-wave));
+        -webkit-transform: translate(
+            var(--min-translate-wave),
+            var(--min-translate-wave)
+        );
+        -moz-transform: translate(
+            var(--min-translate-wave),
+            var(--min-translate-wave)
+        );
+        -ms-transform: translate(
+            var(--min-translate-wave),
+            var(--min-translate-wave)
+        );
+        -o-transform: translate(
+            var(--min-translate-wave),
+            var(--min-translate-wave)
+        );
     }
 }
-
 @keyframes waves-growing-1 {
     0% {
         width: 0;
@@ -236,7 +272,7 @@ img {
         opacity: 1;
     }
     100% {
-        width: 16vw;
+        width: var(--max-size-wave);
         opacity: 1;
     }
 }
@@ -251,7 +287,7 @@ img {
         opacity: 1;
     }
     100% {
-        width: 10vw;
+        width: calc(var(--min-size-wave) / 2);
         opacity: 1;
     }
 }

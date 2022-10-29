@@ -68,9 +68,31 @@ ul {
     header {
         height: auto;
     }
+    i{
+        position: fixed;
+        z-index: 5;
+    }
     ul {
         display: flex;
         flex-direction: column;
+    }
+    header {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header:hover {
+        flex-direction: row;
+    }
+
+    header:not(:hover) {
+        min-height: 0;
+        height: 0;
+        flex-direction: column;
+    }
+    header * {
+        overflow-y: hidden;
     }
 }
 
