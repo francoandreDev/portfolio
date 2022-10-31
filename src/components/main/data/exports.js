@@ -6,11 +6,18 @@ import texts from "./texts";
 import images from "./images";
 import presentations from "./presentations";
 
-let textsImages = []
+let textsImages = [];
 
 texts.forEach((text, index) => {
-    let obj = {text: text, img: images[index], id: index}
-    textsImages.push(obj)
-})
+    let obj = { text: text, img: images[index], id: index };
+    textsImages.push(obj);
+});
 
-export { presentations, aboutMe, technologies, experience, contactMe, textsImages };
+export {
+    presentations,
+    aboutMe,
+    technologies,
+    experience,
+    contactMe,
+    textsImages
+};

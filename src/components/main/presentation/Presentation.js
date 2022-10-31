@@ -44,7 +44,7 @@ const Presentation = () => {
                     </p>
                 </article>
                 <div
-                    className="container-photo"
+                    className="container-photo flex-center"
                     onClick={() => incrementNumberPresentation()}
                 >
                     <img

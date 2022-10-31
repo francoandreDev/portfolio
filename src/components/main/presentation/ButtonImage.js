@@ -10,7 +10,7 @@ const ButtonImage = ({ id, img, text, showById, setShowById }) => {
 
     return (
         <div className="button-image">
-            <button className="container-demo" onClick={() => changeShow()}>
+            <button className="container-demo flex-center" onClick={() => changeShow()}>
                 <img
                     src={img}
                     alt="demo"
