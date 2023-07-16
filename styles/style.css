@@ -397,6 +397,7 @@ mobile;
     main h2 {
         font-size: 45px;
         font-weight: bold;
+        text-align: center;
     }
 
     main>section {
