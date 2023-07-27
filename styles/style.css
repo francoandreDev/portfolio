@@ -673,6 +673,7 @@ mobile;
     }
 
     main>.projects .container-carrousel {
+        scroll-snap-align: center;
         position: absolute;
         top: 0;
         left: 0;
