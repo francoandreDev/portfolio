@@ -710,23 +710,23 @@ mobile;
     }
 
     main>.projects .container-carrousel>.carrousel:nth-child(1) {
-        background-image: url('/assets/images/weather.png');
+        background-image: url('../assets/images/weather.png');
     }
 
     main>.projects .container-carrousel>.carrousel:nth-child(2) {
-        background-image: url('/assets/images/pokeapi.png');
+        background-image: url('../assets/images/pokeapi.png');
     }
 
     main>.projects .container-carrousel>.carrousel:nth-child(3) {
-        background-image: url('/assets/images/graphics-api-demo-app.png');
+        background-image: url('../assets/images/graphics-api-demo-app.png');
     }
 
     main>.projects .container-carrousel>.carrousel:nth-child(4) {
-        background-image: url('/assets/images/hangman.png');
+        background-image: url('../assets/images/hangman.png');
     }
 
     main>.projects .container-carrousel>.carrousel:nth-child(5) {
-        background-image: url('/assets/images/weatherv2.png');
+        background-image: url('../assets/images/weatherv2.png');
     }
 
     .rep-image {
